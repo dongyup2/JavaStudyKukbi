@@ -1,1 +1,1 @@
-# JavaStudyKukbi
+# MyJavaStudy
