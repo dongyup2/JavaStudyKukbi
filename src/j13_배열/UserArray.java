@@ -63,10 +63,10 @@ public class UserArray { // 사용자를 추가하기위한 클래스
 			newstrArray[i] = strArray[i];
 		}
 
-		for (int i = index + 1; i < customArray.getStrArray().length; i++) {
+		for (int i = index + 1; i < customArray.getStrArray().length; i++) {// 6
 			newstrArray[i - 1] = strArray[i];
 		}
-
+		customArray.setStrArray(newstrArray);
 	}
 
 	public void deleteName3(Scanner scanner) {
@@ -80,7 +80,7 @@ public class UserArray { // 사용자를 추가하기위한 클래스
 		String[] newtempArray = new String[newSize];// tempArray를 다시 순회하여 Scanner 객체와 일치하지 않은 문자열을 newtempArray에 저장
 		//9개
 		newSize = 0;
-		for (int i = 0; i < newtempArray.length; i++) {
+		for (int i = 0; i < newtempArray.length; i++) {//9
 			if (!tempArray[i].equals(scanner)) { 
 				newtempArray[newSize++] = tempArray[i];
 			}
@@ -88,10 +88,19 @@ public class UserArray { // 사용자를 추가하기위한 클래스
 		customArray.setStrArray(newtempArray);
 	}
 
-	public void deleteName4() {
-
+	public void updateName(Scanner scanner) {
+		String[] tempArray = customArray.getStrArray();
+		System.out.println("수정하실 이름을 입력해주세요.");
+		String Name = scanner.nextLine();
+		for(int i = 0; i < tempArray.length; i++) {
+			if(tempArray[i].equals(Name)) {
+				System.out.println("수정할 이름을 입력해주세요: ");
+				String newName = scanner.nextLine();
+				tempArray[i] = newName;
+			}
+		}
+		customArray.setStrArray(tempArray);
 	}
-
 	private void addName(String name) {
 		customArray.add(name);
 		System.out.println("추가된 이름: ");

@@ -16,6 +16,7 @@ public class CustomArrayTest {
 			System.out.println("1. 사용자 추가");
 			System.out.println("2. 사용자 전체 조회");
 			System.out.println("3. 사용자 삭제");
+			System.out.println("4. 사용자 수정");
 			System.out.println("q. 프로그램 종료");
 			System.out.println("---------------------------------------");
 			System.out.print("메뉴를 선택하세요: ");
@@ -27,7 +28,9 @@ public class CustomArrayTest {
 			}else if(cmd == '2') {
 				userArray.selectNameAll();
 			}else if(cmd == '3') {
-				userArray.deleteName3(scanner);
+				userArray.deleteName2(scanner);
+			}else if(cmd == '4') {
+				userArray.updateName(scanner);
 			}else if(cmd == 'q') {
 				System.out.println("프로그램 종료중...");
 				for(int i = 0; i < 10; i++) {
