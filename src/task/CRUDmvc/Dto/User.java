@@ -7,9 +7,9 @@ import lombok.Data;
 @Data
 public class User {
 	 private int usercode;
-	 private String name;
 	 private String id;
-	 private String password;
+	 private String pwd;
+	 private String name;
 	 private String email;
 	 private String phone;
 	 private String address;
@@ -20,7 +20,7 @@ public class User {
 				 .usercode(usercode)
 				 .name(name)
 				 .id(id)
-				 .password(password)
+				 .pwd(pwd)
 				 .email(email)
 				 .phone(phone)
 				 .address(address)
