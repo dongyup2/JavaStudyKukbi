@@ -5,7 +5,7 @@ public class ClassTestMain {
 	public static void main(String[] args) {
 		((ClassA) new ClassB()).showData();
 		
-		ClassB bb = new ClassB();
+		ClassB bb = new ClassB(); // 업캐스팅과 다운캐스팅 
 		ClassA aa = bb;
 	
 		ClassA aaa = new ClassB(); //업캐스팅 한번에
