@@ -72,6 +72,8 @@ public class UserArray { // 사용자를 추가하기위한 클래스
 	public void deleteName3(Scanner scanner) {
 		String[] tempArray = customArray.getStrArray(); // customArray 에서 가져온 데이터를 tempArray에 저장
 		int newSize = 0; // 카운트 변수생성
+		System.out.println("삭제하실 이름을 적어주세요>>");
+		String str = scanner.nextLine();
 		for (int i = 0; i < tempArray.length; i++) {
 			if (!tempArray[i].equals(scanner)) {
 				newSize++;
