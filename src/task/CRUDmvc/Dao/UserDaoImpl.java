@@ -60,7 +60,19 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public int selectUser() throws Exception {
-		// TODO Auto-generated method stub
+		int result = 0;
+		sql = "SELECT\r\n"
+				+ "	*\r\n"
+				+ "FROM\r\n"
+				+ "	USER";
+		conn = pool.getConnection();
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, );
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 		return 0;
 	}
 
