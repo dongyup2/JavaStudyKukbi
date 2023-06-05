@@ -1,5 +1,6 @@
 package j13_배열;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 import lombok.Data;
@@ -33,19 +34,26 @@ public class UserArray { // 사용자를 추가하기위한 클래스
 	}
 
 	public void deleteName(Scanner scanner) { // 삭제 메소드
-		System.out.println("삭제하실 이름을 적어주세요>>");
-		String str = scanner.nextLine();
-		String[] strArray = customArray.getStrArray();
-		for (int i = 0; i < customArray.getStrArray().length; i++) {
-			if (strArray[i].equals(str)) {
-				for (int j = i; j < customArray.getStrArray().length - 1; j++) {
-					strArray[j] = strArray[j + 1];
-				}
-				System.out.println("삭제 되었습니다.");
-				cnt++;
-			}
-		}
+	    System.out.println("삭제하실 이름을 적어주세요>>");
+	    String str = scanner.nextLine();
+	    String[] strArray = customArray.getStrArray();
+	    int totalRemoved = 0;
+
+	    for (int i = 0; i < strArray.length - totalRemoved; ) {
+	        if (strArray[i].equals(str)) {
+	            for (int j = i; j < customArray.getStrArray().length - 1; j++) {
+	                strArray[j] = strArray[j + 1];
+	            }
+	            System.out.println("삭제 되었습니다.");
+	            totalRemoved++;
+	        } else {
+	            i++;
+	        }
+	    }
+
+	    customArray.setStrArray(Arrays.copyOf(strArray, customArray.getStrArray().length - totalRemoved));
 	}
+
 
 	public void deleteName2(Scanner scanner) {
 		String[] newstrArray = new String[customArray.getStrArray().length - 1];
@@ -103,6 +111,7 @@ public class UserArray { // 사용자를 추가하기위한 클래스
 		}
 		customArray.setStrArray(tempArray);
 	}
+	
 	private void addName(String name) {
 		customArray.add(name);
 		System.out.println("추가된 이름: ");
